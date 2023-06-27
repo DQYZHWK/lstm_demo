@@ -2,9 +2,10 @@ from pathlib import Path
 import numpy as np
 
 if __name__ == '__main__':
-    with Path('vocab.words.txt').open(encoding='utf-8') as f:
+    print(":ssss")
+    with Path('vo.words.txt').open(encoding='utf-8') as f:
         word_to_idx = {line.strip(): idx for idx, line in enumerate(f)}
-    with Path('vocab.words.txt').open(encoding='utf-8') as f:
+    with Path('vo.words.txt').open(encoding='utf-8') as f:
         word_to_found = {line.strip(): False for line in f}
 
     size_vocab = len(word_to_idx)
@@ -13,7 +14,7 @@ if __name__ == '__main__':
 
     found = 0
     print('Reading W2V file (may take a while)')
-    with Path('../../sgns.zhihu.bigram').open(encoding='utf-8') as f:
+    with Path('../sgns.zhihu.bigram').open(encoding='utf-8') as f:
         for line_idx, line in enumerate(f):
             if line_idx % 100000 == 0:
                 print('- At line {}'.format(line_idx))
@@ -30,4 +31,4 @@ if __name__ == '__main__':
     print('- done. Found {} vectors for {} words'.format(found, size_vocab))
 
     # 保存 np.array
-    np.savez_compressed('w2v.npz', embeddings=embeddings)
+    np.savez_compressed('med_w2v.npz', embeddings=embeddings)

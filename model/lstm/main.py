@@ -130,9 +130,9 @@ if __name__ == '__main__':
         'epochs': 25,
         'batch_size': 20,
         'buffer': 3500,
-        'words': str(Path(DATA_DIR, 'vocab.words.txt')),
-        'tags': str(Path(DATA_DIR, 'vocab.labels.txt')),
-        'w2v': str(Path(DATA_DIR, 'w2v.npz'))
+        'words': str(Path(DATA_DIR, 'vo.words.txt')),
+        'tags': str(Path(DATA_DIR, 'vo.labels.txt')),
+        'w2v': str(Path(DATA_DIR, 'myw2v.npz'))
     }
 
     with Path('results/params.json').open('w', encoding='utf-8') as f:

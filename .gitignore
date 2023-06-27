@@ -1,6 +1,5 @@
 *.pyc
 .vscode/
-.ipynb_checkpoints/
 sgns.*
 *.npz
 neg/
