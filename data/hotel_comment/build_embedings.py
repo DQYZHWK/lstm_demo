@@ -13,8 +13,9 @@ if __name__ == '__main__':
     embeddings = np.zeros((size_vocab, 300))
 
     found = 0
+    
     print('Reading W2V file (may take a while)')
-    with Path('../sgns.zhihu.bigram').open(encoding='utf-8') as f:
+    with Path('../sgns.baidubaike.bigram-char').open(encoding='utf-8') as f:
         for line_idx, line in enumerate(f):
             if line_idx % 100000 == 0:
                 print('- At line {}'.format(line_idx))
@@ -31,4 +32,4 @@ if __name__ == '__main__':
     print('- done. Found {} vectors for {} words'.format(found, size_vocab))
 
     # 保存 np.array
-    np.savez_compressed('med_w2v.npz', embeddings=embeddings)
+    np.savez_compressed('med2_w2v.npz', embeddings=embeddings)
